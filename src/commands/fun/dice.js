@@ -11,8 +11,8 @@ module.exports = {
             option.setName('max')
                 .setDescription('The maximum number it’ll roll to (default: 0)')),
 	async execute(interaction) {
-        const min = interaction.options.getNumber('min') ?? 20;
-        const max = interaction.options.getNumber('max') ?? 0;
+        const min = interaction.options.getNumber('min') ?? 0;
+        const max = interaction.options.getNumber('max') ?? 20;
 
         var num = Math.random() * (max - min) + min;
 

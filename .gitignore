@@ -1,3 +1,8 @@
-config.json
-eslint.config.js
+# Dependencies
 node_modules
+
+# Private data
+config.json
+
+# Configs
+eslint.config.js

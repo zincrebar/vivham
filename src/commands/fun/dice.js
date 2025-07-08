@@ -1,0 +1,21 @@
+const { SlashCommandBuilder } = require('discord.js');
+
+module.exports = {
+	data: new SlashCommandBuilder()
+		.setName('dice')
+		.setDescription('Roll the dice!')
+        .addNumberOption(option =>
+            option.setName('min')
+                .setDescription('The minimum number it’ll roll from (default: 20)'))
+        .addNumberOption(option =>
+            option.setName('max')
+                .setDescription('The maximum number it’ll roll to (default: 0)')),
+	async execute(interaction) {
+        const min = interaction.options.getNumber('min') ?? 20;
+        const max = interaction.options.getNumber('max') ?? 0;
+
+        var num = Math.random() * (max - min) + min;
+
+		await interaction.reply(`${Math.round(num)}`);
+	},
+};

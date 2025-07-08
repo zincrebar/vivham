@@ -6,10 +6,10 @@ module.exports = {
 		.setDescription('Roll the dice!')
         .addNumberOption(option =>
             option.setName('min')
-                .setDescription('The minimum number it’ll roll from (default: 20)'))
+                .setDescription('The minimum number it’ll roll from (default: 0)'))
         .addNumberOption(option =>
             option.setName('max')
-                .setDescription('The maximum number it’ll roll to (default: 0)')),
+                .setDescription('The maximum number it’ll roll to (default: 20)')),
 	async execute(interaction) {
         const min = interaction.options.getNumber('min') ?? 0;
         const max = interaction.options.getNumber('max') ?? 20;
